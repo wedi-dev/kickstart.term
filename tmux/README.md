@@ -4,6 +4,51 @@ Kompletny przewodnik po możliwościach i skrótach klawiszowych w Twojej konfig
 
 ---
 
+## Wymagania
+
+Przed użyciem tej konfiguracji, upewnij się że masz zainstalowane:
+
+### 🔧 Wymagane narzędzia:
+
+1. **fzf** (Fuzzy finder - dla tmux-fzf)
+   ```bash
+   # Instalacja fzf
+   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+   ~/.fzf/install --bin
+
+   # Dodaj do PATH (lub użyj symlink)
+   mkdir -p ~/.local/bin
+   ln -sf ~/.fzf/bin/fzf ~/.local/bin/fzf
+   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+
+2. **Rust/Cargo** (dla tmux-thumbs)
+   ```bash
+   # Instalacja Rust
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   source ~/.cargo/env
+   ```
+
+3. **xclip** (do kopiowania do systemowego schowka)
+   ```bash
+   sudo apt install xclip
+   # lub na innych systemach
+   sudo yum install xclip  # RHEL/CentOS
+   sudo pacman -S xclip    # Arch
+   ```
+
+### 📦 Instalacja pluginów
+
+Po zainstalowaniu wymaganych narzędzi:
+
+1. Uruchom tmux: `tmux`
+2. Zainstaluj pluginy: `Ctrl+a I` (wielkie i)
+3. Poczekaj na zakończenie instalacji
+4. Przeładuj konfigurację: `Ctrl+a r`
+
+---
+
 ## Podstawowe Informacje
 
 - **Prefix:** `Ctrl+a` (zamiast domyślnego `Ctrl+b`)
