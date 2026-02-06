@@ -174,6 +174,55 @@ Wciśnij `a` → `/home/user/project/file.txt` w schowku
 
 ---
 
+### 🚀 tmux-copy-toolkit - Quickcopy, Easymotion, Easycopy
+**Konfiguracja schowka:** `pbcopy` (macOS) lub `xclip -selection clipboard` (Linux)
+
+**Skróty:**
+| Skrót | Tryb | Opis |
+|-------|------|------|
+| `Ctrl+a Q` | Quickcopy | Kopiuj ścieżki, URL, IP, hashe |
+| `Ctrl+a T` | Linecopy | Kopiuj całe linie |
+| `Ctrl+a [ e` | Easymotion | Skocz do dowolnego słowa (w copy mode) |
+| `Ctrl+a [ E` | Easycopy | Zaznacz dowolny fragment (w copy mode) |
+
+---
+
+**Quickcopy (Ctrl+a Q) - najprostszy tryb:**
+1. Naciśnij `Ctrl+a Q`
+2. Ekran pokazuje hinty (literki) przy rozpoznanych wzorcach: ścieżki, URL, IP, hashe git
+3. Wpisz literkę → tekst kopiowany do schowka
+4. Gotowe
+
+**Linecopy (Ctrl+a T) - kopiowanie linii:**
+1. Naciśnij `Ctrl+a T`
+2. Hinty pojawiają się na początku każdej linii
+3. Wpisz literkę → cała linia kopiowana do schowka
+
+**Easymotion (Ctrl+a [ e) - nawigacja:**
+1. Wejdź w copy mode: `Ctrl+a [`
+2. Naciśnij `e`
+3. Hinty pojawiają się przy każdym słowie
+4. Wpisz literkę → kursor skacze do tego słowa
+5. Możesz teraz zaznaczyć tekst normalnie (`v`, potem `y`)
+
+**Easycopy (Ctrl+a [ E) - zaznaczanie zakresu:**
+1. Wejdź w copy mode: `Ctrl+a [`
+2. Naciśnij `E` (wielkie)
+3. Hinty pojawiają się - wybierz POCZĄTEK zaznaczenia
+4. Hinty pojawiają się ponownie - wybierz KONIEC zaznaczenia
+5. Zaznaczony tekst automatycznie kopiowany do schowka
+
+---
+
+**Przykład Quickcopy:**
+```
+/home/user/project [a]    https://github.com [b]
+192.168.1.100 [c]         abc123def [d]
+```
+Wciśnij `a` → `/home/user/project` w schowku
+
+---
+
 ### 🔍 tmux-fzf - Fuzzy Finder Integration
 **Skrót:** `Ctrl+a Ctrl+f`
 
@@ -474,6 +523,10 @@ tmux detach
 | `Alt+h/j/k/l` | Nawigacja panele |
 | `Ctrl+a f` | Fullscreen panel |
 | `Ctrl+a F` | Thumbs (szybki wybór) |
+| `Ctrl+a Q` | Quickcopy (ścieżki, URL) |
+| `Ctrl+a T` | Linecopy (całe linie) |
+| `Ctrl+a [ e` | Easymotion (w copy mode) |
+| `Ctrl+a [ E` | Easycopy (w copy mode) |
 | `Ctrl+a Ctrl+f` | FZF menu |
 | `Ctrl+a [` | Copy mode |
 | `Ctrl+a S` | Sync panele |
